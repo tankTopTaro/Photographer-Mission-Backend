@@ -30,4 +30,6 @@ Route::get('/photographer/album/{albumId}/user/{userId}/{token}', [AlbumControll
 
 Route::get('/photographer/download/album/{albumId}/user/{userId}/file/{fileName}', [DownloadController::class, 'downloadFile']);
 
-
+Route::get('/test', function() {
+    return response()->json(['message' => 'success']);
+});
