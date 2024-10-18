@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\CaptureController;
 use App\Http\Controllers\DownloadController;
+use App\Mail\TestEmail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['api'])->group(function () {
@@ -32,4 +34,8 @@ Route::get('/photographer/download/album/{albumId}/user/{userId}/file/{fileName}
 
 Route::get('/test', function() {
     return response()->json(['message' => 'success']);
+});
+
+Route::get('/test-mail', function() {
+    return Mail::to('balmoresk3v1n@gmail.com')->send(new TestEmail());
 });

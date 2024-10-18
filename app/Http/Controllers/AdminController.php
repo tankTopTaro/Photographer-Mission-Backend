@@ -108,7 +108,7 @@ class AdminController extends Controller
 
                 // Generate the album access link
                 // $albumUrl = route('show', ['albumId' => $album->id, 'userId' => $user->id, 'token' => $token]);
-                $albumUrl = "http://localhost:3000/photographer/album/{$album->id}/user/{$user->id}/{$token}";
+                $albumUrl = "https://photographer-mission.io/photographer/album/{$album->id}/user/{$user->id}/{$token}";
 
                 // Send an email to the user with the album access link
                 Mail::to($user->email)->send(new AlbumAccessMail($albumUrl, $user));
